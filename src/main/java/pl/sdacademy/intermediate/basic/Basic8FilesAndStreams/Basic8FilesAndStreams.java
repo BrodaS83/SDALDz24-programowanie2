@@ -10,12 +10,13 @@ import java.util.stream.Collectors;
 public class Basic8FilesAndStreams {
     public static void main(String[] args) {
         BookStore bookStore = new BookStore();
+
         List<String> allauthors = bookStore.getBooks().stream()
                 .map(Book::getAuthor)
                 .distinct()
                 .collect(Collectors.toList());
 
-        int numberOfAllSpakowskiBooks = bookStore.findBookByAuthor("Andrzej Sabkowski").size();
+        int numberOfAllSapkowskiBooks = bookStore.findBookByAuthor("Andrzej Sabkowski").size();
 
         double totalCostOfSomeFantasyBooks = bookStore.findGener(Genre.FANTASY)
                 .stream()
@@ -24,13 +25,26 @@ public class Basic8FilesAndStreams {
                 .mapToDouble(Book::getPrice)            //to samo co - map(book -> book.getPrice())
                 .sum();
 
-        List<BookShortInfo> shortInfoAbaoutSomeCrimeStory = bookStore.findGener(Genre.CRIME_STORY)//fineGener = findeBooksByGenner
+        List<BookShortInfo> shortInfoAboutSomeCrimeBooks = bookStore.findGener(Genre.CRIME_STORY)//fineGener = findeBooksByGenner
                 .stream()
                 .filter(book -> book.getAuthor().equals("Harlan Coben"))
                 .filter(book -> book.getNumberOfPages() <= 300)
                 .skip(2)
-                .map(book -> BookShortInfo.builder())
-                              .author()
+                .map(book -> BookShortInfo.builder()
+                        .title(book.getTitle())
+                        .author(book.getAuthor())
+                        .yearPushlished(book.getYearPushlished())
+                        .build())
+                .collect(Collectors.toList());
+
+        System.out.println("All authors: " + allauthors);
+        System.out.println("***************************************************");
+        System.out.println("Number of all Sapkowski books: " + numberOfAllSapkowskiBooks);
+        System.out.println("***************************************************");
+        System.out.println("Total cost of some fantasy books: " + totalCostOfSomeFantasyBooks);
+        System.out.println("***************************************************");
+        System.out.println("Short info about some crime books: " + shortInfoAboutSomeCrimeBooks);
+
 
 
 

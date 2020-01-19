@@ -79,7 +79,6 @@ public class main {
                 .stream()
                 .allMatch(person -> person.getAge() >= 18);
         System.out.println(" allMatch " + b1);
-        System.out.println(" allMatch " + b1); //do usunięcia
 
         boolean b = allPersons
                 .stream()
