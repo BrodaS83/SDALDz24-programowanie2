@@ -30,8 +30,7 @@ public class Basic8FilesAndStreams {
                 .filter(book -> book.getNumberOfPages() <= 300)
                 .skip(2)
                 .map(book -> BookShortInfo.builder())
-                                .title()
-                                .author()
+                              .author()
 
 
 
