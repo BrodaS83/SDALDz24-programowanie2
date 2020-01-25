@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BookStoreInitializer {
+class BookStoreInitializer {
 
     List<Book> initBookStore() {
         List<Book> books = new ArrayList<>();
@@ -16,7 +16,7 @@ public class BookStoreInitializer {
             Scanner scanner = new Scanner(booksFile);
             while (scanner.hasNext()) {
                 String bookLine = scanner.nextLine();
-                String [] splitLine = bookLine.split("\\|");
+                String[] splitLine = bookLine.split("\\|");
                 String title = splitLine[0];
                 String author = splitLine[1];
                 String yearPushlishedS = splitLine[2];

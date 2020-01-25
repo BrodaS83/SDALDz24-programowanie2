@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Getter
 public class Basic8FilesAndStreams {
     public static void main(String[] args) {
@@ -20,8 +21,8 @@ public class Basic8FilesAndStreams {
 
         double totalCostOfSomeFantasyBooks = bookStore.findGener(Genre.FANTASY)
                 .stream()
-                .filter(book -> book.getYearPushlished() >= 1990 && book.getYearPushlished() <= 1999 )
-                .filter(book -> BigDecimal.valueOf(book.getPrice()).compareTo(BigDecimal.valueOf(40.0))> 0)
+                .filter(book -> book.getYearPushlished() >= 1990 && book.getYearPushlished() <= 1999)
+                .filter(book -> BigDecimal.valueOf(book.getPrice()).compareTo(BigDecimal.valueOf(40.0)) > 0)
                 .mapToDouble(Book::getPrice)            //to samo co - map(book -> book.getPrice())
                 .sum();
 
@@ -44,13 +45,9 @@ public class Basic8FilesAndStreams {
         System.out.println("Total cost of some fantasy books: " + totalCostOfSomeFantasyBooks);
         System.out.println("***************************************************");
         System.out.println("Short info about some crime books: " + shortInfoAboutSomeCrimeBooks);
-
-
-
-
     }
+}
 
-    }
 
 
 

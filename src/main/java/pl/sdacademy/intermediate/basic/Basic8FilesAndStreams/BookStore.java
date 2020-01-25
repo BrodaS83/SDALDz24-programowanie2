@@ -2,18 +2,20 @@ package pl.sdacademy.intermediate.basic.Basic8FilesAndStreams;
 
 import lombok.Getter;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
-public class BookStore {
+class BookStore {
     private List<Book> books;
 
-    BookStore(){
+    BookStore() {
         this.books = new BookStoreInitializer().initBookStore();
     }
-    List<Book> findBookByTitle (String title){
+
+    List<Book> findBookByTitle(String title) {
         return this.books.stream()
                 .filter(book -> book.getTitle().equals(title))
                 .collect(Collectors.toList());
@@ -35,7 +37,7 @@ public class BookStore {
     }
     List<Book> findPrice (double price) {
         return this.books.stream()
-                .filter(book -> book.getPrice() == price)
+                .filter(book -> BigDecimal.valueOf(book.getPrice()).equals(BigDecimal.valueOf(price)))
                 .collect(Collectors.toList());
     }
     List<Book> findGener (Genre genre){

@@ -52,18 +52,18 @@ import lombok.ToString;
 @Builder
 @ToString
 @Getter
-public class Book {
+class Book {
 
-    String title;
-    String author;
-    int yearPushlished;
-    int numberOfPages;
-    double price;
-    Genre genre;
+    private String title;
+    private String author;
+    private int yearPushlished;
+    private int numberOfPages;
+    private double price;
+    private Genre genre;
 
-    public Book(String title, String author, int yearPushlished) {
-        this.title = title;
-        this.author = author;
-        this.yearPushlished = yearPushlished;
-    }
+//    public Book(String title, String author, int yearPushlished) {
+//        this.title = title;
+//        this.author = author;
+//        this.yearPushlished = yearPushlished;
+
 }
