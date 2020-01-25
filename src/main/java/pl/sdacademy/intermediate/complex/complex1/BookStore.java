@@ -1,19 +1,21 @@
 package pl.sdacademy.intermediate.complex.complex1;
 
 import lombok.Getter;
-import pl.sdacademy.intermediate.basic.Basic8FilesAndStreams.Genre;
+
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Getter
 class BookStore {
     //Zmodyfikuj klasę BookStore, by przechowywała set, a nie listę
-    private List<Book> books;
+    private Set<Book> books; //było List<Book> books
 
     BookStore() {
-        this.books = new BookStoreInitializer().initBookStore();
+        //this.books = new BookStoreInitializer().initBookStore();
+        this.books = (Set<Book>) new BookStoreInitializer().initBookStore();
     }
 
     List<Book> findBookByTitle(String title) {

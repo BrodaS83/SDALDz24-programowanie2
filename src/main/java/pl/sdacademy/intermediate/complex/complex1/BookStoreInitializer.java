@@ -1,17 +1,14 @@
 package pl.sdacademy.intermediate.complex.complex1;
 
-import pl.sdacademy.intermediate.basic.Basic8FilesAndStreams.Genre;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 class BookStoreInitializer {
-
-    List<Book> initBookStore() {
-        List<Book> books = new ArrayList<>();
+    //Zmodyfikuj klasę BookStoreInitializer, by zwracała Set<Book>.
+    Set<Book> initBookStore() { // Liste na Seta
+        Set<Book> books = new HashSet<>(); //Liste na Seta i ArrayList na HashSet
         String booksFilePathFromResource = getClass().getClassLoader().getResource("books.txt").getFile();
         File booksFile = new File(booksFilePathFromResource);
         try {
@@ -47,8 +44,8 @@ class BookStoreInitializer {
             e.printStackTrace();
             System.out.println("Nie znaleziono listy tytułów");
         }
-        //Zmodyfikuj klasę BookStoreInitializer, by zwracała Set<Book>.
-        return Set < Book >;
+
+        return books;
 
     }
 

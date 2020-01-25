@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
-public class Basic8FilesAndStreams {
+class Basic8FilesAndStreams {
     public static void main(String[] args) {
         BookStore bookStore = new BookStore();
 
