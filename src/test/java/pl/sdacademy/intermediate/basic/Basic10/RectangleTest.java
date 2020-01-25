@@ -7,13 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class RectangleTest {
+    private static final int DEFALT_WIDTH = 3;
+    private static final int DEFALT_HEIGHT = 4;
 
     private Rectangle rectangle;
 
     @Before
 
     public void setRectangle() {
-        this.rectangle = new Rectangle(3, 4);
+        this.rectangle = new Rectangle(DEFALT_WIDTH, DEFALT_HEIGHT);
     }
 
     @After
@@ -38,12 +40,12 @@ public class RectangleTest {
 
     @Test
     public void testGetterWidth() {
-        Assert.assertEquals(3, rectangle.getWidth());
+        Assert.assertEquals(DEFALT_WIDTH, rectangle.getWidth());
     }
 
     @Test
     public void testGetterHeight() {
-        Assert.assertEquals(4, rectangle.getHeight());
+        Assert.assertEquals(DEFALT_HEIGHT, rectangle.getHeight());
     }
 
     @Test

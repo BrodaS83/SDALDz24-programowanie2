@@ -59,8 +59,6 @@ import java.util.UUID;
 @Getter
 class Book {
 
-    @Builder.Default
-    int amount = 3;
     private String title;
     private String author;
     private int yearPushlished;
@@ -69,6 +67,8 @@ class Book {
     private Genre genre;
     @Builder.Default
     private UUID id = UUID.randomUUID();
+    @Builder.Default
+    int amount = 3;
 
     @Override
     public boolean equals(Object o) {
@@ -82,10 +82,10 @@ class Book {
     public int hashCode() {
         return Objects.hash(id);
     }
-
     //Dodaj metodę toBookShortInfo(), która przekształci książkę w obiekt BookShortInfo i go zwróci
+
     public void toBookShortInfo() {
-        Book book = new BookShorInfo;
+        Book book = new BookShortInfo();
         return book;
     }
 //    public Book(String title, String author, int yearPushlished) {
